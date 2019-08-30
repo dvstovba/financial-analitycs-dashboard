@@ -1,14 +1,14 @@
 import axios from "axios";
 import {URI} from "../config";
 
-const  getLabels = (query)=> {
+const  getLabels = (query: string | number)=> {
     return axios.get(`${URI}/labels?q=${query}`)
         .then(({data}) => data);
 };
-const getLabelDataById = (id)=>{
+const getLabelDataById = (id:string | number)=>{
     return axios.get(`${URI}/labelsData?label_id=${id}&timestamp=${new Date().getTime()}`)
         .then(({data}) => {
-        return data.map(dt => ({
+        return data.map((dt:{date: string, in: string | number, out: string | number, initial_deposit: number | null, op_cl_price: number }) => ({
                 date: dt.date,
                 enter: dt['in'],
                 out: dt.out,

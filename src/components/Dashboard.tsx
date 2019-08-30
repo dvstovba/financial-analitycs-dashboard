@@ -21,16 +21,16 @@ import {
     dateFormat2
 } from '../helpers'
 import {BLUE_COLOR} from "../config";
-
-const Dashboard = () => {
-    const [data, setData] = useState([]);
-    const [chartData, setChartData] = useState([]);
-    const [dateFrom, setDateFrom] = useState(undefined);
-    const [dateTo, setDateTo] = useState(undefined);
-    const [selected, setSelected] = useState(undefined);
-    const [loading, setLoading] = useState(false);
+import {IDataItem, IChartDataItem, ILabelItem} from '../models';
+const Dashboard: React.FC = () => {
+    const [data, setData] = useState<IDataItem[]>([]);
+    const [chartData, setChartData] = useState<IChartDataItem[]>([]);
+    const [dateFrom, setDateFrom] = useState<Date | string | null>(null);
+    const [dateTo, setDateTo] = useState<Date | string | null>(null);
+    const [selected, setSelected] = useState<ILabelItem[] | []>([]);
+    const [loading, setLoading] = useState<boolean>(false);
     useEffect(() => {
-        if (data && data.length) {
+        if (data && data.length && dateFrom && dateTo) {
             const chartData = filterByDate(reselectData(data), dateFrom, dateTo);
             setChartData(chartData);
         }
@@ -39,7 +39,7 @@ const Dashboard = () => {
         handleSelect() callback on search result selected
         @param {Array} val
     */
-    const handleSelect = val => {
+    const handleSelect = (val:ILabelItem[] | [] |undefined) => {
         if (!val || !val.length) return false;
         setSelected(val);
         setLoading(true);
@@ -79,7 +79,7 @@ const Dashboard = () => {
                         <Row >
                             <Col className="mt-3 mt-md-0">
                                 <p style={{margin: 0}}>Date From</p>
-                                {!!dateFrom &&
+                                {dateFrom && dateTo &&
                                 <DatePicker
                                     selected={dateFormat2(dateFrom)}
                                     onChange={setDateFrom}
@@ -88,11 +88,11 @@ const Dashboard = () => {
                                     includeDates={data.map(dt => dateFormat2(dt.date))}
                                     dateFormat="dd.MM.yyyy"/>
                                 }
-                                {!dateFrom && <DatePicker disabled/>}
+                                {!dateFrom && <DatePicker disabled onChange={()=>{}}/>}
                             </Col>
                             <Col className="mt-3 mt-md-0">
                                 <p style={{margin: 0}}>Date To</p>
-                                {!!dateTo &&
+                                {dateFrom && dateTo &&
                                 <DatePicker
                                     selected={dateFormat2(dateTo)}
                                     onChange={setDateTo}
@@ -102,7 +102,7 @@ const Dashboard = () => {
                                     dateFormat="dd.MM.yyyy"
                                 />
                                 }
-                                {!dateTo && <DatePicker disabled/>}
+                                {!dateTo && <DatePicker disabled onChange={()=>{}}/>}
                             </Col>
                         </Row>
                     </Col>
@@ -152,5 +152,4 @@ const Dashboard = () => {
     )
 };
 
-// Dashboard.propTypes = {};
 export default Dashboard;

@@ -1,25 +1,37 @@
-import React, {useRef} from "react";
-import PropTypes from "prop-types";
+import React, {ReactNode, useRef} from "react";
 import withFixedColumns from "react-table-hoc-fixed-columns";
 import "react-table-hoc-fixed-columns/lib/styles.css";
 import Table from "../Table/Table";
 import {withoutCurrency} from '../../../helpers';
 
 const ReactTableFixedColumns = withFixedColumns(Table);
-
-const drawCell = (row) => {
+interface IRow {
+    value: string|number;
+    column:{id: string};
+}
+const drawCell = (row:IRow):ReactNode => {
     //these columns will be displayed with 2 fraction digits
     const fractionDigits = ['vgInPercentAT', 'vgInPercentBH', 'anRateReturnAT', 'anRateReturnBH', 'capDepAT', 'capDepBH'].includes(row.column.id) ? 2 : 0;
     const color = Number(row.value) > 0 ? "inherit" : "#b80607";
     return (<div className="text-center"
-                 style={{color: color}}>{row.value === "-" ? "-" : withoutCurrency(row.value, fractionDigits)}</div>)
+                 style={{color: color}}>
+        {row.value === "-" && "-"}
+        {row.value !== "-" && withoutCurrency(row.value, fractionDigits)}
+    </div>)
 };
 
-const PerformanceTable = (props) => {
-    const tableParent = useRef(null);
+interface IPerformanceTable {
+    data: any[];
+    loading:boolean;
+    className?:string;
+    initDeposit:number | '0';
+}
+
+const PerformanceTable:React.FC<IPerformanceTable> = (props) => {
+    const tableParent = useRef<HTMLDivElement>(null);
     const {data, loading, className, initDeposit} = props;
     const firstColumnWidth = 218;
-    const fullWidth = (tableParent && tableParent.current && tableParent.current.offsetWidth > 1108) ? tableParent.current.width : 1108;
+    const fullWidth = (tableParent && tableParent.current && tableParent.current.offsetWidth > 1108) ? tableParent.current.offsetWidth-2 : 1108;
     const subColumnsWidth = (fullWidth - firstColumnWidth) / (5 * 2);
     const columns = [
         {
@@ -136,17 +148,5 @@ const PerformanceTable = (props) => {
         </div>
 
     )
-}
-PerformanceTable.propTypes = {
-    data: PropTypes.arrayOf(PropTypes.shape()),
-    className: PropTypes.string,
-    initDeposit: PropTypes.number,
-    loading: PropTypes.bool,
-};
-PerformanceTable.defaultProps = {
-    data: [],
-    className: "",
-    initDeposit: 0,
-    loading: false,
 };
 export default PerformanceTable

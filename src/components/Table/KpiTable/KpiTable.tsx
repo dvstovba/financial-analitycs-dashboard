@@ -1,23 +1,37 @@
 import React from "react";
-import PropTypes from "prop-types";
 import withFixedColumns from "react-table-hoc-fixed-columns";
 import Table from "../Table/Table";
 import "react-table-hoc-fixed-columns/lib/styles.css";
 import {dateFormat, transformData, withoutCurrency} from '../../../helpers'
+import {IKpiTableItem} from "../../../models";
+
 const ReactTableFixedColumns = withFixedColumns(Table);
 
-const KpiTable = props => {
+interface IKpiTable {
+    data: IKpiTableItem[];
+    loading:boolean;
+    className?:string;
+    initDeposit:number | '0';
+}
+
+interface IRow {
+    original:{
+        key: string;
+        name: string;
+    }
+}
+const KpiTable:React.FC<IKpiTable> = props => {
     const {
       loading,
       data,
       initDeposit,
     } = props;
 
-    const dataObj = transformData(data);
+    const dataObj:{[key: string]: IKpiTableItem} = transformData(data);
     /*
     rows array
     */
-    const rows = data && data.length ? [
+    const rows:{name:string, key:string}[] = data && data.length ? [
         {name: 'AlphaTrader value development in €', key: 'alphaValue'},
         {name: 'Buy&Hold value development in €', key: 'holdValue'},
         {name: 'Delta value development in €', key: 'delta'},
@@ -34,7 +48,7 @@ const KpiTable = props => {
           <p
             style={{
               margin: 0,
-              visibility: `${loading ? "hidden" : "visible"}`,
+              display: `${loading ? "none" : "initial"}`,
             }}
           >
             <strong>{dateFormat(dataObj[key].date)}</strong>
@@ -46,10 +60,11 @@ const KpiTable = props => {
       minWidth: 80,
       values: dataObj[key],
       className: "center",
-      Cell: row => {
+      Cell: (row:IRow) => {
 
         //these columns will be displayed with 2 fraction digits
         const fractionDigits = ['alphaReturnPercent', 'holdReturnPercent', 'deltaReturnPercent' ].includes(row.original.key) ? 2 : 0;
+        // @ts-ignore
         const value = dataObj[key][row.original.key];
         const color = Number(value) > 0 ? "#79ae50":"#b80607";
         if(row.original.key === 'delta' || row.original.key === 'deltaReturnPercent'){
@@ -73,7 +88,7 @@ const KpiTable = props => {
         </div>,
         width: 250,
         fixed: "left",
-        Cell: row => {
+        Cell: (row:IRow) => {
           if(row.original.key === 'delta' || row.original.key === 'deltaReturnPercent'){
             return <p style={{margin:0}} className="text-left">{row.original.name}</p>
           }
@@ -99,16 +114,5 @@ const KpiTable = props => {
         defaultPageSize={100}
       />
     );
-};
-KpiTable.propTypes = {
-  data: PropTypes.arrayOf(PropTypes.shape()),
-  loading: PropTypes.bool,
-  initDeposit: PropTypes.number,
-};
-
-KpiTable.defaultProps = {
-  data: [],
-  loading: false,
-  initDeposit: 0,
 };
 export default KpiTable;
