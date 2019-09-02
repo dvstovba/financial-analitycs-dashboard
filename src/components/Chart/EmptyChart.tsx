@@ -1,11 +1,11 @@
 import React from 'react';
-import {Line, LineChart, ReferenceArea, ResponsiveContainer, XAxis, YAxis} from "recharts";
+import {Label, Line, LineChart, ReferenceArea, ResponsiveContainer, XAxis, YAxis} from "recharts";
 import {BLUE_COLOR} from "../../config";
 /*
 CustomTooltip() Empty Chart based on recharts components
 @return(Element)
 */
-export const EmptyChart = () => {
+export const EmptyChart: React.FC = () => {
     const empty = [{x: 0, y: 0}, {x: 1, y: 0}, {x: 2, y: 0}, {x: 3, y: 3}];
     return (
         <ResponsiveContainer width="100%"
@@ -29,9 +29,9 @@ export const EmptyChart = () => {
                     x2={2}
                     y1={1}
                     y2={2}
-                    stroke="rgba(130, 168, 203, 0.3)" fill="rgba(130, 168, 203, 0.3)"
-                    label="No data found"
-                />
+                    stroke="rgba(130, 168, 203, 0.3)"
+                    fill="rgba(130, 168, 203, 0.3)"
+                ><Label>No data found</Label></ReferenceArea>
                 <Line
                     dataKey='x'
                     stroke={BLUE_COLOR}

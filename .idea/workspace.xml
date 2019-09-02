@@ -2,38 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="df013c40-4c40-4b36-b284-356263680e6e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/api/api.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Chart/ChartWrapper/ChartWrapper.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Chart/CustomDot.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Chart/CustomTooltip.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Chart/CustomizedAxisTick.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Chart/EmptyChart.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Chart/LineChartComponent.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Chart/renderLegend.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Dashboard.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/HorizontalLine/HorizontalLine.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Loading/Loading.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/SearchComponent/MenuItem.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/SearchComponent/SearchComponent.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Table/KpiTable/KpiTable.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Table/PerformanceTable/PerformanceTable.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Table/Table/Table.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/helpers.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/module.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/bootstrap-grid.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/bootstrap-grid.min.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/bootstrap-reboot.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/bootstrap-reboot.min.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/bootstrap-theme.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/bootstrap.min.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Chart/ChartWrapper/ChartWrapper.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Chart/ChartWrapper/ChartWrapper.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Chart/EmptyChart.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Chart/EmptyChart.tsx" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -49,8 +22,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/Dashboard.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2772">
-              <caret line="145" column="44" lean-forward="true" selection-start-line="145" selection-start-column="44" selection-end-line="145" selection-end-column="44" />
+            <state relative-caret-position="3480">
+              <caret line="145" column="44" selection-start-line="145" selection-start-column="44" selection-end-line="145" selection-end-column="44" />
               <folding>
                 <element signature="e#0#49#0" expanded="true" />
               </folding>
@@ -61,7 +34,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/Table/KpiTable/KpiTable.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-720">
+            <state relative-caret-position="360">
               <caret line="15" selection-start-line="15" selection-end-line="15" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
@@ -70,23 +43,22 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/components/Table/PerformanceTable/PerformanceTable.tsx">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/Chart/ChartWrapper/ChartWrapper.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2832">
-              <caret line="118" column="60" lean-forward="true" selection-start-line="118" selection-start-column="60" selection-end-line="118" selection-end-column="60" />
+            <state>
               <folding>
-                <element signature="e#0#47#0" expanded="true" />
+                <element signature="e#0#26#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/Chart/ChartWrapper/ChartWrapper.js">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/components/Chart/EmptyChart.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="12" column="33" lean-forward="true" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="33" />
+            <state relative-caret-position="300">
+              <caret line="33" selection-start-line="33" selection-end-line="34" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -95,32 +67,29 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/helpers.ts">
+        <entry file="file://$PROJECT_DIR$/tsconfig.json">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="48">
-              <caret line="2" column="89" lean-forward="true" selection-start-line="2" selection-start-column="89" selection-end-line="2" selection-end-column="89" />
-              <folding>
-                <element signature="e#0#28#0" expanded="true" />
-                <element signature="e#8149#9860#0" />
-              </folding>
+            <state relative-caret-position="443">
+              <caret line="26" column="25" lean-forward="true" selection-start-line="26" selection-start-column="4" selection-end-line="26" selection-end-column="25" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/module.d.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="47" lean-forward="true" selection-start-column="47" selection-end-column="47" />
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/node_modules/recharts/es6/cartesian/ReferenceArea.js">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/models.ts">
+        <entry file="file://$PROJECT_DIR$/node_modules/recharts/src/cartesian/ReferenceArea.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="444">
-              <caret line="44" column="30" lean-forward="true" selection-start-line="44" selection-start-column="30" selection-end-line="44" selection-end-column="30" />
+            <state relative-caret-position="245">
+              <caret line="129" column="82" lean-forward="true" selection-start-line="129" selection-start-column="82" selection-end-line="129" selection-end-column="82" />
             </state>
           </provider>
         </entry>
@@ -139,6 +108,8 @@
       <find>dataFromAll</find>
       <find>getVg</find>
       <find>IKpiTableData</find>
+      <find>Label</find>
+      <find>label</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -169,6 +140,8 @@
         <option value="$PROJECT_DIR$/src/helpers.ts" />
         <option value="$PROJECT_DIR$/src/models.ts" />
         <option value="$PROJECT_DIR$/src/components/Table/PerformanceTable/PerformanceTable.tsx" />
+        <option value="$PROJECT_DIR$/src/components/Chart/ChartWrapper/ChartWrapper.tsx" />
+        <option value="$PROJECT_DIR$/src/components/Chart/EmptyChart.tsx" />
       </list>
     </option>
   </component>
@@ -258,6 +231,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -299,15 +273,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1567089399761</updated>
-      <workItem from="1567089401106" duration="22194000" />
+      <workItem from="1567089401106" duration="27555000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22194000" />
+    <option name="totallyTimeSpent" value="27555000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="npm" side_tool="true" />
       <window_info id="Favorites" side_tool="true" />
@@ -345,21 +320,6 @@
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor />
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="696">
-          <caret line="29" column="92" selection-start-line="29" selection-start-column="92" selection-end-line="29" selection-end-column="92" />
         </state>
       </provider>
     </entry>
@@ -459,16 +419,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Dashboard.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2772">
-          <caret line="145" column="44" lean-forward="true" selection-start-line="145" selection-start-column="44" selection-end-line="145" selection-end-column="44" />
-          <folding>
-            <element signature="e#0#49#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/module.d.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -483,26 +433,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Table/KpiTable/KpiTable.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-720">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Chart/ChartWrapper/ChartWrapper.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="12" column="33" lean-forward="true" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="33" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/helpers.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="48">
@@ -514,12 +444,104 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="288">
+            <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Table/PerformanceTable/PerformanceTable.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2832">
           <caret line="118" column="60" lean-forward="true" selection-start-line="118" selection-start-column="60" selection-end-line="118" selection-end-column="60" />
           <folding>
             <element signature="e#0#47#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Chart/renderLegend.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2">
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Table/KpiTable/KpiTable.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Chart/ChartWrapper/ChartWrapper.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/@types/react/index.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="691">
+          <caret line="2822" column="66" lean-forward="true" selection-start-line="2822" selection-start-column="66" selection-end-line="2822" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Dashboard.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3480">
+          <caret line="145" column="44" selection-start-line="145" selection-start-column="44" selection-end-line="145" selection-end-column="44" />
+          <folding>
+            <element signature="e#0#49#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/@types/recharts/index.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="169">
+          <caret line="54" column="12" selection-start-line="54" selection-start-column="12" selection-end-line="54" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/recharts/es6/cartesian/ReferenceArea.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/recharts/src/cartesian/ReferenceArea.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="245">
+          <caret line="129" column="82" lean-forward="true" selection-start-line="129" selection-start-column="82" selection-end-line="129" selection-end-column="82" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tsconfig.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="443">
+          <caret line="26" column="25" lean-forward="true" selection-start-line="26" selection-start-column="4" selection-end-line="26" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Chart/EmptyChart.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="33" selection-start-line="33" selection-end-line="34" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
