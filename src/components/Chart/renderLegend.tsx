@@ -1,11 +1,10 @@
 import React from "react";
-import PropTypes from 'prop-types';
 /*
 CustomTooltip() custom LegendIcon based on recharts component
 @params(Object) props
 @return(Element)
 */
-const LegendIcon = props => <svg className="recharts-surface" width="14" height="14" viewBox="0 0 32 32" version="1.1"
+const LegendIcon = (props: any) => <svg className="recharts-surface" width="14" height="14" viewBox="0 0 32 32" version="1.1"
                                  style={{display: "inline-block", verticalAlign: "middle", marginRight: "4px"}}>
     <path strokeWidth="4" fill="none" stroke={props.color} d="M0,16h10.666666666666666A5.333333333333333,5.333333333333333,0,1,1,21.333333333333332,16H32M21.333333333333332,16A5.333333333333333,5.333333333333333,0,1,1,10.666666666666666,16"
           className="recharts-legend-icon"/>
@@ -15,9 +14,9 @@ CustomTooltip() custom renderLegend based on recharts component
 @params(Object) props
 @return(Element)
 */
-export const renderLegend = (props) => {
-    const { payload } = props;
 
+export const renderLegend:React.FC<any> = props => {
+    const { payload } = props;
     return (
         <ul className="recharts-default-legend" style={{padding: 0, margin: 0, textAlign: 'center'}}>
             <li
@@ -49,7 +48,7 @@ export const renderLegend = (props) => {
                 Sell signal
             </li>
             {
-                payload.map((entry, index) => (
+                payload.map((entry:{color:string,value:string|number}, index:number) => (
                     <li
                         key={`item-${index}`}
                         className={`recharts-legend-item legend-item-${index}`} style={{display: "inline-block", marginRight: "10px"}}
@@ -61,11 +60,4 @@ export const renderLegend = (props) => {
             }
         </ul>
     );
-};
-
-renderLegend.propTypes = {
-    payload: PropTypes.arrayOf(PropTypes.shape({
-        color: PropTypes.string,
-        value: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
-    }))
 };

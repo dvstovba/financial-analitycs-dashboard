@@ -1,11 +1,16 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {Label, Line, LineChart, ReferenceArea, ResponsiveContainer, XAxis, YAxis} from "recharts";
-import {BLUE_COLOR} from "../../config";
+import {ThemeContext} from "../../ThemeContext";
 /*
 CustomTooltip() Empty Chart based on recharts components
 @return(Element)
 */
-export const EmptyChart: React.FC = () => {
+interface IProps {
+    labelY?: string;
+    text?: string;
+}
+export const EmptyChart: React.FC<IProps> = ({labelY='Portfolio (Thousands)', text= 'No data found'}) => {
+    const theme:{[key:string]:string} = useContext(ThemeContext);
     const empty = [{x: 0, y: 0}, {x: 1, y: 0}, {x: 2, y: 0}, {x: 3, y: 3}];
     return (
         <ResponsiveContainer width="100%"
@@ -21,7 +26,7 @@ export const EmptyChart: React.FC = () => {
                     tickFormatter={() => ""}
                 />
                 <YAxis
-                    label={{value: 'Portfolio (Thousands)', angle: -90, position: 'insideLeft', height: 36}}
+                    label={{value: labelY, angle: -90, position: 'insideLeft', height: 36}}
                     tickFormatter={() => ""}
                 />
                 <ReferenceArea
@@ -31,11 +36,13 @@ export const EmptyChart: React.FC = () => {
                     y2={2}
                     stroke="rgba(130, 168, 203, 0.3)"
                     fill="rgba(130, 168, 203, 0.3)"
-                ><Label>No data found</Label></ReferenceArea>
+                >
+                    <Label>{text}</Label>
+                </ReferenceArea>
                 <Line
                     dataKey='x'
-                    stroke={BLUE_COLOR}
-                    fill={BLUE_COLOR}
+                    stroke={theme.blue}
+                    fill={theme.blue}
                     strokeWidth={0}
                     dot={false}
                     activeDot={false}

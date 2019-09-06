@@ -32,7 +32,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "serve": "react-scripts build && json-server -H localhost -w db.json -p 3000 -s ./build"
+    "serve": "react-scripts build && json-server -H localhost -w labelsDB.json -p 8080 -s ./build"
   },
   "eslintConfig": {
     "extends": "react-app"

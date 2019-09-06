@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, useContext} from "react";
 import Container from "react-bootstrap/Container";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -20,9 +20,11 @@ import {
     dateFormat,
     dateFormat2
 } from '../helpers'
-import {BLUE_COLOR} from "../config";
+import {ThemeContext} from "../ThemeContext";
 import {IDataItem, IChartDataItem, ILabelItem} from '../models';
+
 const Dashboard: React.FC = () => {
+    const theme:{[key:string]:string} = useContext(ThemeContext);
     const [data, setData] = useState<IDataItem[]>([]);
     const [chartData, setChartData] = useState<IChartDataItem[]>([]);
     const [dateFrom, setDateFrom] = useState<Date | string | null>(null);
@@ -111,7 +113,7 @@ const Dashboard: React.FC = () => {
                     <Col>
                         {actionName &&
                         <h3 style={{margin: 0}}>
-                            <strong><span style={{color: BLUE_COLOR}}>{actionName} - {fullName}</span></strong>
+                            <strong><span style={{color: theme.blue}}>{actionName} - {fullName}</span></strong>
                         </h3>
                         }
                         {dateFrom && dateTo && <p style={{margin: 0}}>
@@ -127,13 +129,13 @@ const Dashboard: React.FC = () => {
                     </Col>
                 </Row>
             </Container>
-            <HorizontalLine background={BLUE_COLOR}/>
+            <HorizontalLine background={theme.blue}/>
             <Container fluid className="mb-5">
                 <Row className="mt-3 mb-5">
                     <Col>
                         {actionName &&
                         <h3 style={{margin: 0}}>
-                            <strong>KPIs - <span style={{color: BLUE_COLOR}}>{actionName} - {fullName}</span></strong>
+                            <strong>KPIs - <span style={{color: theme.blue}}>{actionName} - {fullName}</span></strong>
                         </h3>
                         }
 

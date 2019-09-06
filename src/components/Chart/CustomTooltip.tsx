@@ -1,5 +1,4 @@
 import React, { Fragment } from "react";
-import PropTypes from "prop-types";
 import uuid from "uuid/v4";
 import {dateFormat, withoutCurrency} from "../../helpers";
 /*
@@ -7,7 +6,18 @@ customTooltipItem() custom Tooltip Item based on recharts component
 @params(Object) itemData
 @return(Element)
 */
-const customTooltipItem = (itemData) => (
+interface IItem {
+    name: string;
+    dataKey: string;
+    color: string;
+    value: string | number;
+}
+interface ITooltipProps {
+    label: string;
+    active: boolean;
+    payload: IItem[]
+}
+const customTooltipItem = (itemData: IItem) => (
   <li
     className="recharts-tooltip-item"
     key={uuid()}
@@ -29,7 +39,7 @@ CustomTooltip() custom Tooltip based on recharts component
 @params(Object) props
 @return(Element)
 */
-const CustomTooltip = props => {
+const CustomTooltip:React.FC<ITooltipProps> = props => {
   const { active, payload, label } = props;
   return (
     <Fragment>
@@ -69,16 +79,6 @@ const CustomTooltip = props => {
         )}
     </Fragment>
   );
-};
-
-CustomTooltip.propTypes = {
-  payload: PropTypes.arrayOf(PropTypes.shape()).isRequired,
-  active: PropTypes.bool,
-  label: PropTypes.string
-};
-CustomTooltip.defaultProps = {
-  active: false,
-  label: ""
 };
 
 export default CustomTooltip;

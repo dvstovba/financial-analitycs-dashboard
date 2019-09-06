@@ -1,5 +1,5 @@
 import axios from "axios";
-import {URI} from "../config";
+const URI = 'http://localhost:8080';
 
 const  getLabels = (query: string | number)=> {
     return axios.get(`${URI}/labels?q=${query}`)

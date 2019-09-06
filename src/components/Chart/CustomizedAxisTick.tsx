@@ -1,12 +1,18 @@
 import React from "react";
-import PropTypes from "prop-types";
 import {dateFormat} from "../../helpers";
 /*
 CustomTooltip() custom Axis Tick based on recharts component
 @params(Object) props
 @return(Element)
 */
-const CustomizedAxisTick = props => {
+interface IProps {
+  y: number;
+  payload: {
+    coordinate: number,
+    value: string
+  }
+}
+const CustomizedAxisTick:React.FC<IProps> = props => {
   const { y, payload } = props;
   return (
     <g
@@ -22,19 +28,8 @@ const CustomizedAxisTick = props => {
       >
         {dateFormat(payload.value)}
       </text>
-
     </g>
   );
 };
 
-CustomizedAxisTick.propTypes = {
-  payload: PropTypes.arrayOf(PropTypes.shape({
-    value: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
-  })),
-  y: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-};
-CustomizedAxisTick.defaultProps = {
-  payload: [],
-  y: 0,
-};
 export default CustomizedAxisTick;

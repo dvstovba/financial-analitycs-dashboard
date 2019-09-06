@@ -1,5 +1,4 @@
-import React from 'react';
-import PropTypes from "prop-types";
+import React, {useContext} from 'react';
 import {
     LineChart,
     Line,
@@ -18,11 +17,14 @@ import {getOpenClose} from "../../helpers";
 import CustomTooltip from "./CustomTooltip";
 import {renderLegend} from "./renderLegend";
 import {EmptyChart} from './EmptyChart'
-
-import {BLUE_COLOR, YELLOW_COLOR} from "../../config";
-
-const LineChartComponent = props => {
-    const {data} = props;
+import {ThemeContext} from "../../ThemeContext";
+import {IChartDataItem} from "../../models";
+interface IProps {
+    data: IChartDataItem[]
+}
+const LineChartComponent:React.FC<IProps> = props => {
+    const theme:{[key:string]:string} = useContext(ThemeContext);
+    const {data=[]} = props;
     const areas = data && data.length ? getOpenClose(data) : [];
     return (
         <>
@@ -58,8 +60,8 @@ const LineChartComponent = props => {
                     }
                     <Line name="Alpha Trader"
                           dataKey='summary'
-                          stroke={BLUE_COLOR}
-                          fill={BLUE_COLOR}
+                          stroke={theme.blue}
+                          fill={theme.blue}
                           strokeWidth={2}
                           dot={CustomDot}
                           activeDot={CustomDot}
@@ -67,8 +69,8 @@ const LineChartComponent = props => {
                     <Line
                         name="Buy & Hold"
                         dataKey='buyAndHold'
-                        stroke={YELLOW_COLOR}
-                        fill={YELLOW_COLOR}
+                        stroke={theme.yellow}
+                        fill={theme.yellow}
                         strokeWidth={2}
                         dot={false}
                     />
@@ -86,10 +88,5 @@ const LineChartComponent = props => {
         </>
     );
 };
-LineChartComponent.propTypes = {
-    data: PropTypes.arrayOf(PropTypes.shape())
-};
-LineChartComponent.defaultProps = {
-    data: []
-};
+
 export default LineChartComponent;
