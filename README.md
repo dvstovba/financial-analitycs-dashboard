@@ -12,6 +12,7 @@
 - npm start
 
 ###broadcast to WLAN
+
    in package.json -> scripts -> serve
    and in src/api.ts -> URI
    change "localhost" to your local IP
