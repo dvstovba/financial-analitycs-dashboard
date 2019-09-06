@@ -4,10 +4,13 @@
 
 #Start
 - npm run serve
-or 
+
+#or
+ 
 - json-server -H localhost -w labelsDB.json -p 8080
 - open new terminal
 - npm start
+
 ###broadcast to WLAN
    in package.json -> scripts -> serve
    and in src/api.ts -> URI
